@@ -170,8 +170,9 @@ class DatePicker extends Component {
   }
 
   getTitleElement() {
-    const {date, placeholder, customStyles, allowFontScaling} = this.props;
-
+    const {date, locale, placeholder, customStyles, format, allowFontScaling} = this.props;
+    const dateStr = Moment(this.getDateStr()).locale(locale).format(format)
+    console.log('date = ' + dateStr)
     if (!date && placeholder) {
       return (
         <Text allowFontScaling={allowFontScaling} style={[Style.placeholderText, customStyles.placeholderText]}>
@@ -181,7 +182,7 @@ class DatePicker extends Component {
     }
     return (
       <Text allowFontScaling={allowFontScaling} style={[Style.dateText, customStyles.dateText]}>
-        {this.getDateStr()}
+        {dateStr}
       </Text>
     );
   }
