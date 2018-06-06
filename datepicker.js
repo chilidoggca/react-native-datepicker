@@ -160,7 +160,7 @@ class DatePicker extends Component {
       return this.props.getDateStr(dateInstance);
     }
 
-    return Moment(dateInstance).locale(locale).format(format);
+    return Moment(dateInstance).format(format);
   }
 
   datePicked() {
