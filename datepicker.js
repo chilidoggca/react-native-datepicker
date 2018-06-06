@@ -171,8 +171,10 @@ class DatePicker extends Component {
 
   getTitleElement() {
     const {date, locale, placeholder, customStyles, format, allowFontScaling} = this.props;
-    const dateStr = Moment(this.getDateStr()).locale(locale).format(format)
-    console.log('date = ' + dateStr)
+    var dateStr = format === 'hh:mm a' ? this.getDateStr() : Moment(this.getDateStr()).locale(locale).format(format)
+    if (locale.includes('zh')) {
+      dateStr = dateStr.replace('am', '上午').replace('pm', '下午')
+    }
     if (!date && placeholder) {
       return (
         <Text allowFontScaling={allowFontScaling} style={[Style.placeholderText, customStyles.placeholderText]}>
