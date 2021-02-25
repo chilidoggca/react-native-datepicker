@@ -36,7 +36,8 @@
     }
   },
   "dependencies": {
-    "moment": "^2.22.0"
+    "moment": "^2.22.0",
+    "@react-native-community/datetimepicker": "^3.0.9"
   },
   "deprecated": false,
   "description": "React Native DatePicker component for both Android and iOS, useing DatePickerAndroid, TimePickerAndroid and DatePickerIOS",
